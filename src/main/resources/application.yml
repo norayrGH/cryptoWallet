@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: crypto-authorization
+  jpa:
+    database: postgresql
+    show-sql: ${SHOW_SQL:false}
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    open-in-view: off
+  datasource:
+    url: jdbc:postgresql://${JDBC_URL:localhost}:${JDBC_PORT:5432}/${DATABASE_NAME:crypto_wallet}
+    username: ${JDBC_USERNAME:postgres}
+    password: ${JDBC_PASSWORD:noro741}
+  flyway:
+    url: jdbc:postgresql://${JDBC_URL:localhost}:${JDBC_PORT:5432}/${DATABASE_NAME:crypto_wallet}
+    user: postgres
+    password: noro741
+    baseline-on-migrate: true
+    enabled: true
+
+ethereum:
+  service:
+    url: HTTP://127.0.0.1:7545
